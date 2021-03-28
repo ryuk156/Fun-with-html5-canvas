@@ -23,6 +23,7 @@ pipeline {
             steps {
                script{
                 gv.test()
+                 sh "ls -l"
                }
             }
         }
