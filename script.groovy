@@ -3,8 +3,8 @@
 
 def fetch() {
 
-	def response = sh(script: 'curl https://api.github.com/users/ryuk156/repos')
-	println(response[0])
+	def response = sh(script: 'curl https://api.github.com/users/ryuk156/repos', returnStdout: true)
+	println(response.length)
 }
 
 return this
