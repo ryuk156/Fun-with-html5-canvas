@@ -2,9 +2,9 @@
 
 
 def fetch() {
-	def repos = []
-	def v=  
-	return repos
+
+	def response = sh(script: 'curl https://api.github.com/users/ryuk156/repos', returnStdout: true)
+	println(response)
 }
 
 return this
