@@ -6,7 +6,7 @@ def build(){
 }
 
 def test(){
-	echo'test'
+	new File("test.txt");
 }
 
 def deploy(){
