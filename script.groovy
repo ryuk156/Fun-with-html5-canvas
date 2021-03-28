@@ -1,8 +1,7 @@
 #!/usr/bin/env groovy
 
-package org.kohsuke.github
-@Grab(group='org.kohsuke', module='github-api', version='1.75')
-import org.kohsuke.github.GitHub
+
+
 
 def fetch() {
 
