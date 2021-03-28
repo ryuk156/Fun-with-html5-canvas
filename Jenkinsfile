@@ -14,24 +14,19 @@ pipeline {
          stage('build') { 
             steps {
                script{
-                gv.build()
+                gv.fetch()
                }
             }
         }
 
         stage('Test') { 
             steps {
-               script{
-                gv.test()
-                 sh "ls -l"
-               }
+                echo 'test' 
             }
         }
         stage('Deploy') { 
             steps {
-                script{
-                gv.deploy()
-               }
+                echo 'deploy'
             }
         }
     }

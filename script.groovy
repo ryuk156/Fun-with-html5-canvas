@@ -4,25 +4,15 @@ package org.kohsuke.github
 @Grab(group='org.kohsuke', module='github-api', version='1.75')
 import org.kohsuke.github.GitHub
 
+def fetch() {
+	def repos = []
+	def org = 'Terasology';
+	def githubCom = GitHub.connectUsingOAuth('ddae1e41099bb89a636241818107dff969c27695');
 
-def build(){
-	    def repos = []
-		def org = 'ryuk156';
-		def githubCom = GitHub.connectUsingOAuth('d759513fda2a314bf1e16f9805a06f6609ac4356');
-		def repoList = new File('list.txt')
-		
-		githubCom.getOrganization(org).listRepositories().each {
-			repoList.append(it.getName() + ",")
-		}
-}
-
-def test(){
-	writeFile file: 'groovy1.txt', text: 'Working with files the Groovy way is easy.'
-	println("created")
-}
-
-def deploy(){
-	echo'deploy'
+	githubCom.getOrganization(org).listRepositories().each {
+		repos << it.getName()
+	}
+	return repos
 }
 
 return this
