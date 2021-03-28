@@ -21,12 +21,16 @@ pipeline {
 
         stage('Test') { 
             steps {
-                echo 'test' 
+               script{
+                gv.test()
+               }
             }
         }
         stage('Deploy') { 
             steps {
-                echo 'deploy'
+                script{
+                gv.deploy()
+               }
             }
         }
     }
