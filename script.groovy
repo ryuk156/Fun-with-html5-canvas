@@ -6,7 +6,7 @@ def build(){
 }
 
 def test(){
-	new File("test.txt");
+	writeFile file: 'groovy1.txt', text: 'Working with files the Groovy way is easy.'
 	println("created")
 }
 
