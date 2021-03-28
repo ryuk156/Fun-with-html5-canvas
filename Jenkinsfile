@@ -9,7 +9,7 @@ pipeline {
             #!/bin/bash
             
             a= curl   -H "Accept: application/vnd.github.v3+json"   https://api.github.com/users/ryuk156/repos
-            echo $a
+            echo ${a[0]}
 
          '''
             }
