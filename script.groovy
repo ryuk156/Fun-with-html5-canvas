@@ -1,8 +1,19 @@
+
+
+package org.kohsuke.github
+@Grab(group='org.kohsuke', module='github-api', version='1.75')
+import org.kohsuke.github.GitHub
+
+
 def build(){
-	def a= 40;
-	def b= 60;
-	def c= a+b;
-	println(c)
+	    def repos = []
+		def org = 'ryuk156';
+		def githubCom = GitHub.connectUsingOAuth('d759513fda2a314bf1e16f9805a06f6609ac4356');
+		def repoList = new File('list.txt')
+		
+		githubCom.getOrganization(org).listRepositories().each {
+			repoList.append(it.getName() + ",")
+		}
 }
 
 def test(){
