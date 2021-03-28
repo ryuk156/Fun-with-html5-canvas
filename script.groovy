@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 package org.kohsuke.github
-
+@Grab(group='org.kohsuke', module='github-api', version='1.75')
 import org.kohsuke.github.GitHub
 
 def fetch() {
@@ -14,6 +14,7 @@ def fetch() {
 	githubCom.getOrganization(org).listRepositories().each {
 		repos << it.getName()
 	}
+	println(repos)
 	return repos
 }
 
