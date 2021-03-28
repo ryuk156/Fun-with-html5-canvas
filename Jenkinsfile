@@ -5,19 +5,16 @@ pipeline {
     stages {
         stage('init') { 
             steps {
-                script{
-                 gv= load "script.groovy"
-                }
-            }
-        }
-         stage('build') { 
-            steps {
-               script{
-                gv.fetch()
-               }
-            }
-        }
+                 sh '''
+            #!/bin/bash
+            
+            a= curl   -H "Accept: application/vnd.github.v3+json"   https://api.github.com/users/ryuk156/repos
+            echo $a
 
+         '''
+            }
+        }
+         
         stage('Test') { 
             steps {
                 echo 'test' 
