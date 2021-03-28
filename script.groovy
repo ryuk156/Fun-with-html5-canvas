@@ -4,7 +4,7 @@
 def fetch() {
 
 	def response = sh(script: 'curl https://api.github.com/users/ryuk156/repos', returnStdout: true)
-	println(response.length)
+	println(response.size())
 }
 
 return this
