@@ -7,6 +7,7 @@ def build(){
 
 def test(){
 	new File("test.txt");
+	println("created")
 }
 
 def deploy(){
