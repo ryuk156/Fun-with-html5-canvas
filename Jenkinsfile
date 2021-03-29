@@ -5,12 +5,8 @@ pipeline {
     stages {
         stage('init') { 
             steps {
-                bash '''
-                
+                sh '''#!/bin/bash
 
-                #!/usr/bin/env bash
-
-               
 
                 USER=ryuk156;
                 a=$(curl -s https://api.github.com/users/$USER/repos | jq -r '.[].name') 
