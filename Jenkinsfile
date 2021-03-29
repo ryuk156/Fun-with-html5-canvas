@@ -30,7 +30,7 @@ pipeline {
             steps {
                script{
                 def response = sh(script: 'curl -s https://api.github.com/users/$USER/repos', returnStdout: true)
-                println(response)
+                println(response[0])
                }
             }
         }
