@@ -35,15 +35,20 @@ def exec(){
                   moduleDataToJson = new groovy.json.JsonSlurperClassic().parseText(moduleData)
                   moduleName= moduleDataToJson.get("id")
                   println(moduleName)
-
-                  sh 'mkdir(dir:"moduleName")'
-                
-                 sh 'ls -l'
-                
-}else{
-	println("opps dont have file")
-}
+                  moduleDir= new File("./" + moduleName.toString())
+                  x= moduleDir.mkdir()
+                  if(x){
+                  	println("created")
+                  }else{
+                  	println("not created")
+                  }
                   
+                    
+
+	            }else{
+	            	println "The following repository is not a module."
+	            	
+	            }
 }
 
 
