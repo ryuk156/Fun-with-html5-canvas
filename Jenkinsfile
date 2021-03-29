@@ -37,7 +37,10 @@ pipeline {
 
         stage('Test') { 
             steps {
-                gv.fetch() 
+                script{
+                    gv.fetch() 
+                }
+                
             }
         }
         stage('Deploy') { 
