@@ -17,9 +17,7 @@ pipeline {
                done
 
                for x in "${repos[@]}"; do
-
-               cd "https://github.com/$USER/${x}"
-               
+              echo $x 
               done
 
 
@@ -30,7 +28,10 @@ pipeline {
         }
          stage('build') { 
             steps {
-                echo 'build' 
+               script{
+                def response = sh(script: 'curl -s https://api.github.com/users/$USER/repos | jq -r '.[].name'', returnStdout: true)
+                println(response)
+               }
             }
         }
 
