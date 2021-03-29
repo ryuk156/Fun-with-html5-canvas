@@ -36,10 +36,14 @@ def exec(){
                   moduleName= moduleDataToJson.get("id")
                   println(moduleName)
 
-                  dir (moduleName) {
-        writeFile file:'dummy', text:''
-    }
-    sh 'ls -l'
+                  x=dir (moduleName) 
+                if(x){
+                 sh 'ls -l'
+                }else{
+                	println(no )
+                }
+}else{
+	println("opps dont have file")
 }
                   
 }
