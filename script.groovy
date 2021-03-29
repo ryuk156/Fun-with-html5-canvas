@@ -34,6 +34,7 @@ def exec(){
                   moduleData= readFile(requiredFile)
                   moduleDataToJson = new groovy.json.JsonSlurperClassic().parseText(moduleData)
                   moduleName= moduleDataToJson.get("id")
+                  println(moduleName)
                   moduleDir= new File(moduleName.toString())
                   moduleDir.mkdir()
                     
