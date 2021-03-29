@@ -13,7 +13,15 @@ def fetch() {
 		repos << it.name
 	}
 	
-	println(repos)
+	//println(repos)
+   
+   repos.each {
+			dir(it) {
+				git url: "https://github.com/ryuk156/${it}"
+				
+			}
+		}
+
 }
 
 return this
