@@ -36,12 +36,10 @@ def exec(){
                   moduleName= moduleDataToJson.get("id")
                   println(moduleName)
 
-                  x=dir (moduleName) 
-                if(x){
+                  sh 'mkdir(dir:"moduleName")'
+                
                  sh 'ls -l'
-                }else{
-                	println(no )
-                }
+                
 }else{
 	println("opps dont have file")
 }
