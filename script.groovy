@@ -29,13 +29,14 @@ def fetch() {
 
 def exec(){
 	 def requiredFile = "./module.txt"
+	 def indexdir = "./"
 	            if(fileExists(requiredFile)) {
                   
                   moduleData= readFile(requiredFile)
                   moduleDataToJson = new groovy.json.JsonSlurperClassic().parseText(moduleData)
                   moduleName= moduleDataToJson.get("id")
                   println(moduleName)
-                  moduleDir= new File("./" + moduleName.toString())
+                  moduleDir= new File( indexdir + moduleName.toString())
                   x= moduleDir.mkdir()
                   if(x){
                   	println("created")
