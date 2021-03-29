@@ -15,6 +15,11 @@ def fetch() {
 	}
 	
 	//println(repos)
+
+
+		dir('meta-data') {
+			git url: 'https://github.com/GooeyTests/TempIndex'
+		}
    
    repos.each {
 			dir(it) {
@@ -29,7 +34,7 @@ def fetch() {
 
 def exec(){
 	 def requiredFile = "./module.txt"
-	 def indexdir = "../"
+	 def indexdir = "../meta-data/"
 	            if(fileExists(requiredFile)) {
                   
                   moduleData= readFile(requiredFile)
