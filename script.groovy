@@ -43,10 +43,13 @@ def exec(){
                   moduleName = moduleDataToJson.get("id")
                   println(moduleName)
                   moduleDir = new File(indexdir + moduleName.toString())
-                  dir(moduleDir) {
-        writeFile file:'module.txt', text:''
-    }
-    sh 'ls -l'
+                  
+                  sh "mkdir ${moduleDir}"
+                  if(moduleDir){
+                  	println("yes")
+                  }else{
+                  	println("no")
+                  }
                   
                   
                     
