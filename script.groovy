@@ -41,7 +41,7 @@ def exec(){
                   moduleDataToJson = new groovy.json.JsonSlurperClassic().parseText(moduleData)
                   moduleName= moduleDataToJson.get("id")
                   println(moduleName)
-                  moduleDir= new File( indexdir + moduleName.toString())
+                  moduleDir= new File(indexdir + moduleName.toString())
                   x= moduleDir.mkdir()
                   if(x){
                   	println("created")
