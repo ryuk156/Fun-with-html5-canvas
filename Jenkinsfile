@@ -6,8 +6,11 @@ pipeline {
         stage('init') { 
             steps {
                 sh '''
+                
 
                 #!/usr/bin/env bash
+
+                shopt -s extglob
 
                 USER=ryuk156;
                 a=$(curl -s https://api.github.com/users/$USER/repos | jq -r '.[].name') 
@@ -16,7 +19,7 @@ pipeline {
                for i in $a; do
                 repos+=("$i")
                done
-               
+
                for x in "${repos[@]}"; do
               echo $x 
               done
