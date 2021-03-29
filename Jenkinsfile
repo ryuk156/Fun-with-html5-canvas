@@ -5,16 +5,31 @@ pipeline {
     stages {
         stage('init') { 
             steps {
-                script{
-                 gv= load "script.groovy"
-                }
+                sh '''
+
+                #!/usr/bin/env bash
+
+                USER=ryuk156;
+                a=$(curl -s https://api.github.com/users/$USER/repos | jq -r '.[].name') 
+               repos=()
+
+               for i in $a; do
+                repos+=("$i")
+               done
+               
+               for x in "${repos[@]}"; do
+              echo $x 
+              done
+
+
+
+
+         '''
             }
         }
          stage('build') { 
             steps {
-               script{
-                gv.fetch()
-               }
+                echo 'build' 
             }
         }
 
