@@ -29,7 +29,7 @@ def fetch() {
 
 def exec(){
 	 def requiredFile = "./module.txt"
-	 def indexdir = "../modules"
+	 def indexdir = "../modules/"
 	            if(fileExists(requiredFile)) {
                   
                   moduleData= readFile(requiredFile)
