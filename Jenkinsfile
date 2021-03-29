@@ -29,15 +29,15 @@ pipeline {
          stage('build') { 
             steps {
                script{
-                def response = sh(script: 'curl -s https://api.github.com/users/$USER/repos', returnStdout: true)
-                println(response[0])
+                gv = load 'script.groovy'
+                
                }
             }
         }
 
         stage('Test') { 
             steps {
-                echo 'test' 
+                gv.fetch() 
             }
         }
         stage('Deploy') { 
