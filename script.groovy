@@ -42,7 +42,12 @@ def exec(){
                   moduleName= moduleDataToJson.get("id")
                   println(moduleName)
                   moduleDir= new File(indexdir + moduleName.toString())
-                  println(moduleDir.mkdir())
+                  x= moduleDir.mkdir()
+                  if(x){
+                  	println("yes")
+                  }else{
+                  	println("no")
+                  }
                   
                   
                     
