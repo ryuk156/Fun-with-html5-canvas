@@ -1,6 +1,7 @@
 #!/usr/bin/env groovy
 
 import groovy.json.JsonSlurper
+import static groovy.io.FileType.FILES
 
 def fetch() {
 	
@@ -18,7 +19,14 @@ def fetch() {
    repos.each {
 			dir(it) {
 				git url: "https://github.com/ryuk156/${it}"
-				
+	            def moduleFile = "./module.txt"
+	            if(fileExists(moduleFile)) {
+                  
+                  println("yes")
+
+	            }else{
+	            	println("no")
+	            }
 			}
 		}
 
