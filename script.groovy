@@ -19,7 +19,16 @@ def fetch() {
    repos.each {
 			dir(it) {
 				git url: "https://github.com/ryuk156/${it}"
-	            def requiredFile = "./module.txt"
+                exec()
+			}
+		}
+
+}
+
+
+
+def exec(){
+	 def requiredFile = "./module.txt"
 	            if(fileExists(requiredFile)) {
                   
                   moduleData= readFile(requiredFile)
@@ -33,9 +42,6 @@ def fetch() {
 	            	println "The following repository is not a module."
 	            	
 	            }
-			}
-		}
-
 }
 
 return this
