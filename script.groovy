@@ -37,12 +37,7 @@ def exec(){
                   println(moduleName)
                   moduleDir= new File(moduleName.toString())
                   x= moduleDir.mkdir()
-                  if(x){
-                  	println("created")
-                  }else{
-                  	println("not created")
-                  }
-                  
+                  println(x)
                     
 
 	            }else{
