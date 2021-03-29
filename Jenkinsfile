@@ -17,7 +17,9 @@ pipeline {
                done
 
                for x in "${repos[@]}"; do
-              echo $x 
+
+               cd "https://github.com/$USER/${x}"
+               
               done
 
 
@@ -44,3 +46,6 @@ pipeline {
         }
     }
 }
+
+
+
