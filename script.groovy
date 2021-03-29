@@ -40,6 +40,7 @@ def exec(){
         writeFile file:'dummy', text:''
     }
     sh 'ls -l'
+}
                   
 }
 
