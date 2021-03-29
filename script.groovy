@@ -36,7 +36,12 @@ def exec(){
                   moduleName= moduleDataToJson.get("id")
                   println(moduleName)
                   moduleDir= new File(moduleName.toString())
-                  moduleDir.mkdir()
+                  if(moduleDir.mkdir()){
+                  	println("created")
+                  }else{
+                  	println("not created")
+                  }
+                  
                     
 
 	            }else{
@@ -44,5 +49,7 @@ def exec(){
 	            	
 	            }
 }
+
+
 
 return this
