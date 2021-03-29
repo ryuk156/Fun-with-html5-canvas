@@ -6,7 +6,7 @@ import static groovy.io.FileType.FILES
 def fetch() {
 	
 	def response = sh(script: 'curl -s https://api.github.com/users/ryuk156/repos', returnStdout: true).trim()
-	def json = new groovy.json.JsonSlurperClassic().parseText(response)
+	def json = new JsonSlurper().parseText(response)
     
     def repos=[]
 
@@ -19,13 +19,19 @@ def fetch() {
    repos.each {
 			dir(it) {
 				git url: "https://github.com/ryuk156/${it}"
-	            def moduleFile = "./module.txt"
-	            if(fileExists(moduleFile)) {
+	            def requiredFile = "./module.txt"
+	            if(fileExists(requiredFile)) {
                   
-                  println("yes")
+                  moduleData= readFile(requiredFile)
+                  moduleDataToJson = new JsonSlurper().parseText(moduleData)
+                  moduleName= moduleDataToJson.get("id")
+                  moduleDir= new File(moduleName.toString())
+                  moduleDir.mkdir()
+                    
 
 	            }else{
-	            	println("no")
+	            	println "The following repository is not a module."
+	            	
 	            }
 			}
 		}
