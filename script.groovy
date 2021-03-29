@@ -24,6 +24,7 @@ def fetch() {
    repos.each {
 			dir(it) {
 				git url: "https://github.com/ryuk156/${it}"
+				sh'ls -l'
                 exec()
 			}
 		}
@@ -37,11 +38,11 @@ def exec(){
 	 def indexdir = "../meta-data/"
 	            if(fileExists(requiredFile)) {
                   
-                  moduleData= readFile(requiredFile)
+                  moduleData = readFile(requiredFile)
                   moduleDataToJson = new groovy.json.JsonSlurperClassic().parseText(moduleData)
-                  moduleName= moduleDataToJson.get("id")
+                  moduleName = moduleDataToJson.get("id")
                   println(moduleName)
-                  moduleDir= new File(indexdir + moduleName.toString())
+                  moduleDir = new File(indexdir + moduleName.toString())
                   x= moduleDir.mkdir()
                   if(x){
                   	println("yes")
