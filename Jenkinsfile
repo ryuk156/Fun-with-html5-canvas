@@ -5,12 +5,12 @@ pipeline {
     stages {
         stage('init') { 
             steps {
-                sh '''
+                bash '''
                 
 
                 #!/usr/bin/env bash
 
-                shopt -s extglob
+               
 
                 USER=ryuk156;
                 a=$(curl -s https://api.github.com/users/$USER/repos | jq -r '.[].name') 
