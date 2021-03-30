@@ -31,7 +31,7 @@ def fetch() {
 
 }
 
-
+@NonCPS
 def exec(){
 	 def requiredFile = "./module.txt"
 	 def indexdir = "../meta-data/"
