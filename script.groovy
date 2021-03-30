@@ -56,7 +56,8 @@ def exec(){
                  for FILE in *; \
                   do \
 
-                 if [ $FILE == *.md ] then \
+                 if [ $FILE == *.md ] \
+                  then \
                    echo "found" \
                  else \
                    echo "not found" \
