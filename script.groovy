@@ -3,7 +3,7 @@
 import groovy.json.JsonSlurperClassic 
 import static groovy.io.FileType.FILES
 
-@NonCPS
+
 def fetch() {
 	
 	def response = sh(script: 'curl -s https://api.github.com/users/ryuk156/repos', returnStdout: true).trim()
@@ -52,8 +52,13 @@ def exec(){
                   sh "touch ${moduleDest}"
 
                 
-
-                 
+                 sh ''' 
+                 for FILE in *; \
+                  do \
+                 echo $FILE; \
+                  done \
+                  
+                 '''
 
                  
                   new File('./').eachFile { file ->
