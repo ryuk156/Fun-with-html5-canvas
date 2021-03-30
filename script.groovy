@@ -52,7 +52,7 @@ def exec(){
                   sh "touch ${moduleDest}"
 
                 
-                  dir = new File('./')
+                  def dir = new File('./')
 
                   dir.eachFile{
                   	file -> 
