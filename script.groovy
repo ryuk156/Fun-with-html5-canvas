@@ -51,17 +51,8 @@ def exec(){
                   
                   sh "touch ${moduleDest}"
 
-                  
-                new File('./').eachFile {
-                  	file ->
-                  	if(file.name.endsWith('.md') || file.name.endsWith('.markdown') || file.name.endsWith('.MD') || file.name.endsWith('.MARKDOWN')){
-                  		
-                  		println("readme found")
-                  	}else{
-
-                  		println("readme not found")
-                  	}
-                  }
+                  sh "pwd"
+                
 
                   
 
