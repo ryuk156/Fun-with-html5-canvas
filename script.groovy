@@ -51,7 +51,7 @@ def exec(){
                   
                   sh "touch ${moduleDest}"
 
-                  sh "ls -l"
+                  sh "cd ${indexdir} ls -l"
 
                    
                   
