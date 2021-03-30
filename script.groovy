@@ -50,18 +50,16 @@ def exec(){
                   moduleDest = moduleDir.toString() + "/module.txt"
                   
                   sh "touch ${moduleDest}"
-                  
-                  dir = new File('./')
-                   
-               
 
-                  dir.eachFileRecurse(FILES) {
-                  	
-                  	if(it.name.endsWith('.md')){
-                  		println(it)
+                  dir = new File('./')
+
+                  dir.eachFile {
+                  	file ->
+                  	if(file.name.endsWith('.md') || file.name.endsWith('.markdown') || file.name.endsWith('.MD') || file.name.endsWith('.MARKDOWN')){
+                  		
                   		println("readme found")
                   	}else{
-                       println(it)
+
                   		println("readme not found")
                   	}
                   }
