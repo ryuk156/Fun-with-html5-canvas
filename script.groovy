@@ -55,11 +55,10 @@ def exec(){
                    
                
 
-                  dir.eachFile{
-                  	file ->
-                  	println(file.name)
-                  	if(file.name.endsWith('.md')){
-                  		
+                  dir.eachFileRecurse(FILES) {
+                  	
+                  	if(it.name.endsWith('.md')){
+                  		println(it)
                   		println("readme found")
                   	}else{
                        
