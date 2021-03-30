@@ -55,15 +55,14 @@ def exec(){
                  sh ''' 
                  #!/bin/bash \
 
-                 for FILE in *; \
-                  do \
+                
 
                  if [ -f *.md ] \
 
                  then \
 
                    echo "found" \
-                   break \
+                   
 
                  else \
 
@@ -71,7 +70,7 @@ def exec(){
 
                  fi \
 
-                 done \
+                 
 
                  '''
 
