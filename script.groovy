@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 import groovy.json.JsonSlurperClassic 
-import java.io.File 
+import static groovy.io.FileType.FILES
 
 
 def fetch() {
@@ -32,7 +32,7 @@ def fetch() {
 
 }
 
-@NonCPS 
+
 def exec(){
 	 def requiredFile = "./module.txt"
 	 def indexdir = "../meta-data/"
@@ -43,26 +43,37 @@ def exec(){
                   moduleName = moduleDataToJson.get("id")
                   println(moduleName)
                   moduleDir = new File(indexdir + moduleName.toString())
-                  moduleDir.mkdir()
-                 
+                  
+                  sh "mkdir ${moduleDir}"
                   
                   moduleSrc = moduleData
-                 
-	           	  moduleDst = writeFile(moduleDir.toString() + "/module.txt")
+                  moduleDest = moduleDir.toString() + "/module.txt"
+                  
+                  sh "touch ${moduleDest}"
 
                 
-                  dir = new File('./')
+                 sh ''' 
+                 #!/bin/bash \
 
-                 
-		
-		dir.eachFile { file ->
-	    	if(file.name.endsWith('.md') || file.name.endsWith('.markdown') || file.name.endsWith('.MD') || file.name.endsWith('.MARKDOWN')) {
-	    		println "README Found."
-				
-	    	}else{
-	    		println("no")
-	    	}
-		}
+                 for FILE in *; \
+                  do \
+
+                 if [ -f *.md ] \
+
+                 then \
+
+                   echo "found" \
+
+                 else \
+
+                   echo "not found" \
+
+                 fi \
+
+                 done \
+
+                 '''
+
                  
                 
 
