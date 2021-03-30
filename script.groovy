@@ -50,8 +50,10 @@ def exec(){
                   moduleDest = moduleDir.toString() + "/module.txt"
                   
                   sh "touch ${moduleDest}"
-                  println(dir)
+                  
                   dir = new File('./')
+                   
+                  sh "ls -l"
 
                   dir.eachFile {
                   	file ->
@@ -59,7 +61,7 @@ def exec(){
                   		
                   		println("readme found")
                   	}else{
-                        println(dir)
+                       
                   		println("readme not found")
                   	}
                   }
