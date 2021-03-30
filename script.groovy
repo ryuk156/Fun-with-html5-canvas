@@ -18,7 +18,7 @@ def fetch() {
 
 
 		dir('meta-data') {
-			git url: 'https://github.com/GooeyTests/TempIndex'
+			git url: 'https://github.com/ryuk156/Amazon-Clone-React.js'
 		}
    
    repos.each {
@@ -52,7 +52,7 @@ def exec(){
                   }
                   
                   
-                    
+                  
 
 	            }else{
 	            	println "The following repository is not a module."
