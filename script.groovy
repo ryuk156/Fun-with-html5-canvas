@@ -50,8 +50,8 @@ def exec(){
                   moduleDest = moduleDir.toString() + "/module.txt"
                   
                   sh "touch ${moduleDest}"
-
-                  dir = new File('/')
+                  println(dir)
+                  dir = new File('./')
 
                   dir.eachFile {
                   	file ->
