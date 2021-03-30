@@ -18,7 +18,7 @@ def fetch() {
 
 
 		dir('meta-data') {
-			git url: 'https://github.com/ryuk156/test-me/'
+			git url: 'https://github.com/ryuk156/test-me'
 		}
    
    repos.each {
@@ -52,7 +52,7 @@ def exec(){
                   }
                   
                   
-                    
+                  
 
 	            }else{
 	            	println "The following repository is not a module."
