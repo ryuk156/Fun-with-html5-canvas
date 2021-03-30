@@ -47,7 +47,7 @@ def exec(){
                   sh "mkdir ${moduleDir}"
                   
                   moduleSrc=moduleData
-                  moduleDest= writeFile(moduleDir.toString()+"/module.txt")
+                  moduleDest= writeFile(moduleDir.toString() + "/module.txt")
 
                   println("fetched module data")
 
