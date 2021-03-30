@@ -53,6 +53,8 @@ def exec(){
 
                 
                  sh ''' 
+                 #!/bin/bash
+
                  for FILE in *; \
                   do \
 
