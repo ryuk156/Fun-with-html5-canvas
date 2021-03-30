@@ -58,6 +58,9 @@ def exec(){
                   	if(file.name.endsWith('.md')){
                   		
                   		println("readme found")
+                  	}else{
+
+                  		println("readme not found")
                   	}
                   }
 
