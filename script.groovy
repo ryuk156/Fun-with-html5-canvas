@@ -18,7 +18,7 @@ def fetch() {
 
 
 		dir('meta-data') {
-			git url: 'https://github.com/GooeyTests/TempIndex'
+			git url: 'https://github.com/ryuk156/test-me/'
 		}
    
    repos.each {
