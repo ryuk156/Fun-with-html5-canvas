@@ -58,10 +58,10 @@ def exec(){
                  if [ $FILE = '*.md' ]; \
                  then \
                  echo "found" \
-                 else \
+                 elif \
                  echo "not found" \
                  fi \
-                 
+
                   done \
 
                  '''
