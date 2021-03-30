@@ -56,7 +56,7 @@ def exec(){
                  
 
                  
-                  s.eachFile { file ->
+                  a.eachFile { file ->
 
     
     if (file.name.endsWith(".md")) {
