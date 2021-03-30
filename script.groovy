@@ -32,7 +32,7 @@ def fetch() {
 
 }
 
-
+@NonCPS 
 def exec(){
 	 def requiredFile = "./module.txt"
 	 def indexdir = "../meta-data/"
@@ -43,27 +43,26 @@ def exec(){
                   moduleName = moduleDataToJson.get("id")
                   println(moduleName)
                   moduleDir = new File(indexdir + moduleName.toString())
-                  
-                  sh "mkdir ${moduleDir}"
+                  moduleDir.mkdir()
+                 
                   
                   moduleSrc = moduleData
-                  moduleDest = moduleDir.toString() + "/module.txt"
-                  
-                  sh "touch ${moduleDest}"
+                 
+	           	  moduleDst = writeFile(moduleDir.toString() + "/module.txt")
 
                 
                   dir = new File('./')
 
-                  dir.eachFile{
-                  	file -> 
-                  	if (file.name.endsWith('.md')){
-                  		println("yes")
-                  	}else{
-                  		println("no")
-
-                  	}
-                  }
-
+                 
+		
+		dir.eachFile { file ->
+	    	if(file.name.endsWith('.md') || file.name.endsWith('.markdown') || file.name.endsWith('.MD') || file.name.endsWith('.MARKDOWN')) {
+	    		println "README Found."
+				
+	    	}else{
+	    		println("no")
+	    	}
+		}
                  
                 
 
