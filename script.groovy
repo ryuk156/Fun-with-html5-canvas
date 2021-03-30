@@ -63,6 +63,7 @@ def exec(){
                  then \
 
                    echo "found" \
+                   break \
 
                  else \
 
