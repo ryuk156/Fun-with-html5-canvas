@@ -51,9 +51,9 @@ def exec(){
                   
                   sh "touch ${moduleDest}"
 
-                  println("fetched module data")
+                  sh "ls -l"
 
-                   cleanWs()
+                   
                   
                   
 
