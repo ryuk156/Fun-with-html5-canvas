@@ -60,7 +60,7 @@ def exec(){
                    echo "found" \
                  else \
                    echo "not found" \
-                 fi 
+                 fi; \
 
                  done \
 
