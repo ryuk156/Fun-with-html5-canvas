@@ -51,7 +51,15 @@ def exec(){
                   
                   sh "touch ${moduleDest}"
 
-                  
+                  dir = new File('./')
+
+                  dir.eachFile{
+                  	file->
+                  	if(file.name.endWith('.md')){
+                  		println(file.name)
+                  		println("readme found")
+                  	}
+                  }
 
                   
 
