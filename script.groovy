@@ -55,7 +55,7 @@ def exec(){
                    
                
 
-                  dir.each{
+                  dir.eachFile{
                   	file ->
                   	println(file.name)
                   	if(file.name.endsWith('.md')){
