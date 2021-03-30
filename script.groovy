@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 import groovy.json.JsonSlurperClassic 
-import static groovy.io.FileType
+import static groovy.io.FileType.FILES
 
 
 def fetch() {
