@@ -55,20 +55,18 @@ def exec(){
                  sh ''' 
                  for FILE in *; \
                   do \
-                 echo $FILE; \
+                 if [ $FILE = '*.md'];\
+                 then \
+                 echo "found" \
+                 else \
+                 echo "not found" \
+                 fi \
                   done \
-                  
+
                  '''
 
                  
-                  new File('./').eachFile { file ->
-
-         println(file.getAbsolutePath())
-    if (file.name.endsWith(".md")) {
-       println("readme found")
-    }else{
-    	println("not found")
-    }
+                
 }
 
 
