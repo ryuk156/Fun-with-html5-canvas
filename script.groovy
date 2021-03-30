@@ -53,11 +53,11 @@ def exec(){
                   
                   dir = new File('./')
                    
-                  sh "ls -l"
+               
 
-                  dir.eachFile {
+                  dir.each{
                   	file ->
-                  	println(file)
+                  	println()
                   	if(file.name.endsWith('.md')){
                   		
                   		println("readme found")
