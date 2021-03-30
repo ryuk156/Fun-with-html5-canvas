@@ -52,27 +52,16 @@ def exec(){
                   sh "touch ${moduleDest}"
 
                 
-                 sh ''' 
-                 #!/bin/bash \
+                  dir = new File('./')
 
-                 for FILE in *; \
-                  do \
-
-                 if [[ "$FILE" == *.md ]] \
-
-                 then \
-
-                   echo "found" \
-
-                 else \
-
-                   echo "not found" \
-
-                 fi \
-
-                 done \
-
-                 '''
+                  dir.eachFile{
+                  	file -> 
+                  	if (file.name.endsWith('.md')){
+                  		println("yes")
+                  	}else{
+                  		println("no")
+                  	}
+                  }
 
                  
                 
