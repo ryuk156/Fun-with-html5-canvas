@@ -24,7 +24,7 @@ def fetch() {
    repos.each {
 			dir(it) {
 				git url: "https://github.com/ryuk156/${it}"
-				sh'ls -l'
+				
                 exec()
 			}
 		}
@@ -53,10 +53,10 @@ def exec(){
 
                   dir = new File('./')
 
-                  dir.eachFile{
-                  	file->
+                  dir.eachFile {
+                  	file ->
                   	if(file.name.endWith('.md')){
-                  		println(file.name)
+                  		
                   		println("readme found")
                   	}
                   }
