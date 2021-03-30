@@ -53,22 +53,13 @@ def exec(){
 
                 
                  sh ''' 
-                 #!/bin/bash \
-
                  for FILE in *; \
                   do \
 
-                 if [ -f "$FILE" *.md ] \
-
-                 then \
-
+                 if [ $FILE == *.md ]; then \
                    echo "found" \
-
-
                  else \
-
                    echo "not found" \
-
                  fi \
 
                  done \
