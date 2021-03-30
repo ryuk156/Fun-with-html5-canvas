@@ -53,18 +53,19 @@ def exec(){
 
                   dir = new File('./')
 
-                  sh "ls -l"
+                 
 
-                  dir.eachFile {
-                  	file ->
-                  	if(file.name.endsWith('.md') || file.name.endsWith('.markdown') || file.name.endsWith('.MD') || file.name.endsWith('.MARKDOWN')){
-                  		
-                  		println("readme found")
-                  	}else{
+                 
+                  dir.eachFileRecurse FileType.FILES,  { file ->
 
-                  		println("readme not found")
-                  	}
-                  }
+    
+    if (!file.name.endsWith(".md")) {
+       println("readme found")
+    }else{
+    	println("not found")
+    }
+}
+
 
                   
 
