@@ -55,14 +55,14 @@ def exec(){
                  sh ''' 
                  for FILE in *; \
                   do \
-                 if [ $FILE = '*.md' ]; \
-                 then \
-                 echo "found" \
-                 elif \
-                 echo "not found" \
+
+                 if [ $FILE = '*.md' ]; then \
+                   echo "found" \
+                 else \
+                   echo "not found" \
                  fi \
 
-                  done \
+                 done \
 
                  '''
 
