@@ -32,7 +32,6 @@ def fetch() {
 }
 
 
-@NonCPS
 def exec(){
 	 def requiredFile = "./module.txt"
 	 def indexdir = "../meta-data/"
@@ -51,14 +50,14 @@ def exec(){
                   
                   sh "touch ${moduleDest}"
 
-                  a = new File('.')
+                
 
                  
 
                  
-                  a.eachFile { file ->
+                  new File('./').eachFile { file ->
 
-    
+         println(file.getAbsolutePath())
     if (file.name.endsWith(".md")) {
        println("readme found")
     }else{
