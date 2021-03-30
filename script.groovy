@@ -53,12 +53,12 @@ def exec(){
 
                 
                  sh ''' 
-                 #!/bin/bash
+                 #!/bin/bash \
 
                  for FILE in *; \
                   do \
 
-                 if [[ $FILE == *.md ]] \
+                 if [[ "$FILE" == *.md ]] \
 
                  then \
 
