@@ -51,7 +51,7 @@ def exec(){
                   
                   sh "touch ${moduleDest}"
 
-                  a = new File('./')
+                  a = new File('.')
 
                  
 
