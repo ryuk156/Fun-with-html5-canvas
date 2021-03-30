@@ -56,7 +56,7 @@ def exec(){
                  for FILE in *; \
                   do \
 
-                 if [ $FILE  -f '*.md' ] \
+                 if [ $FILE == '*.md' ] \
 
                  then \
 
