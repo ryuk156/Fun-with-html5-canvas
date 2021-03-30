@@ -51,9 +51,8 @@ def exec(){
                   
                   sh "touch ${moduleDest}"
 
-                  dir = new File('./')
-
-                  dir.eachFile {
+                  
+                new File('./').eachFile {
                   	file ->
                   	if(file.name.endsWith('.md') || file.name.endsWith('.markdown') || file.name.endsWith('.MD') || file.name.endsWith('.MARKDOWN')){
                   		
