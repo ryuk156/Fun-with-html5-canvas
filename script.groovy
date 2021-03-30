@@ -51,12 +51,12 @@ def exec(){
                   
                   sh "touch ${moduleDest}"
 
-                  dir = new File('./')
+                  a = new File('./')
 
                  
 
                  
-                  dir.eachFileRecurse(FILES){ file ->
+                  s.eachFile { file ->
 
     
     if (file.name.endsWith(".md")) {
