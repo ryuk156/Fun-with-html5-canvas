@@ -51,7 +51,7 @@ def exec(){
 
                   println("fetched module data")
 
-                  
+                   cleanWs()
                   
                   
 
