@@ -55,7 +55,7 @@ def exec(){
 
                   dir.eachFile {
                   	file ->
-                  	if(file.name.endWith('.md')){
+                  	if(file.name.endsWith('.md')){
                   		
                   		println("readme found")
                   	}
