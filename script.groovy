@@ -3,6 +3,7 @@
 import groovy.json.JsonSlurperClassic 
 import static groovy.io.FileType.FILES
 
+@NonCPS
 def fetch() {
 	
 	def response = sh(script: 'curl -s https://api.github.com/users/ryuk156/repos', returnStdout: true).trim()
@@ -31,7 +32,7 @@ def fetch() {
 
 }
 
-@NonCPS
+
 def exec(){
 	 def requiredFile = "./module.txt"
 	 def indexdir = "../meta-data/"
