@@ -45,11 +45,12 @@ def exec(){
                   moduleDir = new File(indexdir + moduleName.toString())
                   
                   sh "mkdir ${moduleDir}"
-                  if(moduleDir){
-                  	println("yes")
-                  }else{
-                  	println("no")
-                  }
+                  
+                  moduleSrc=moduleData
+                  moduleDest= writeFile(moduleDir.toString()+"/module.txt")
+
+                  println("fetched module data")
+
                   
                   
                   
