@@ -59,7 +59,7 @@ def exec(){
                   		
                   		println("readme found")
                   	}else{
-
+                        println(dir)
                   		println("readme not found")
                   	}
                   }
