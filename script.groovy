@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 import groovy.json.JsonSlurperClassic 
-import static groovy.io.FileType.FILES
+import static groovy.io.FileType
 
 
 def fetch() {
@@ -52,16 +52,16 @@ def exec(){
                   sh "touch ${moduleDest}"
 
                 
-                  def dir = new File('./')
+                  File folder = new File('./')
 
-                  dir.eachFile{
-                  	file -> 
-                  	if (file.name.endsWith('.md')){
-                  		println("yes")
-                  	}else{
-                  		println("no")
-                  	}
-                  }
+folder.eachFileRecurse FileType.FILES,  { file ->
+
+    // do nothing if the file ends with a .txt extension
+    if (!file.name.endsWith(".txt")) {
+        println "Processing file ${file.absolutePath}"
+    }
+}
+
 
                  
                 
