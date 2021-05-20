@@ -7,7 +7,8 @@ pipeline {
     stages {
         stage('init') { 
             steps {
-                sh '''#!/bin/bash
+                script{
+                     sh '''#!/bin/bash
 
 
                 USER=ryuk156;
@@ -26,6 +27,8 @@ pipeline {
 
 
          '''
+                }
+               
             }
         }
          stage('build') { 
