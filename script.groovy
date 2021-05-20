@@ -6,7 +6,7 @@ import static groovy.io.FileType.FILES
 
 def fetch() {
 	
-	def response = sh(script: 'curl -s https://api.github.com/users/ryuk156/repos', returnStdout: true).trim()
+	def response = sh(script: 'curl -s https://api.github.com/usersd/ryuk156/repos', returnStdout: true).trim()
 	def json = new groovy.json.JsonSlurperClassic().parseText(response)
     
     def repos=[]
