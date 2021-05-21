@@ -33,13 +33,7 @@ pipeline {
         
     }
     
-                post {
-                
-                success {
-                    
-                }
-            }
-
+              
     
    
 }
