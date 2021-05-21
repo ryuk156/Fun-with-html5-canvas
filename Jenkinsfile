@@ -1,51 +1,27 @@
 
 
-def gv
+
 
 pipeline {
     agent any 
     stages {
         stage('init') { 
             steps {
-                script{
-                     sh '''#!/bin/bash
-
-
-                USER=ryuk156;
-                a=$(curl -s https://api.github.com/users/$USER/repos | jq -r '.[].name') 
-               repos=()
-
-               for i in $a; do
-                repos+=("$i")
-               done
-
-               for x in "${repos[@]}"; do
-              echo $x 
-              done
-
-
-
-
-         '''
-                }
+               
+                echo 'init'
                
             }
         }
          stage('build') { 
             steps {
-               script{
-                gv = load "script.groovy"
-                
-               }
+               echo 'build'
             }
         }
 
         stage('Test') { 
             steps {
-                script{
-                    gv.fetch() 
-                }
-                
+              
+                echo 'Test'
             }
         }
         stage('Deploy') { 
