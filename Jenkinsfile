@@ -29,7 +29,17 @@ pipeline {
                 echo 'deploy'
             }
         }
+        
+        
     }
+    
+                post {
+                
+                success {
+                    
+                }
+            }
+
     
    
 }
